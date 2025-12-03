@@ -11,7 +11,7 @@ import javafx.scene.control.ComboBox;
 public class LoginFormController {
 
     @FXML
-    private JFXComboBox<?> cmbUserType;
+    private JFXComboBox<String> cmbUserType;
 
     @FXML
     private PasswordField txtPassword;
@@ -21,7 +21,7 @@ public class LoginFormController {
 
     @FXML
     public void initialize() {
-
+        cmbUserType.getItems().addAll("Customer", "Staff");
     }
 
     @FXML
