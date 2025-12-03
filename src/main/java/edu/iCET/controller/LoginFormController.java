@@ -63,7 +63,23 @@ public class LoginFormController {
                 }
                 break;
             case "Staff":
-
+                if(username.equals("staff") && password.equals("1234")){
+                    try {
+                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/staff_dashboard.fxml"))));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    stage.show();
+                    txtUsername.clear();
+                    txtPassword.clear();
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Staff Login Failed");
+                    alert.setHeaderText("Invalid Credentials");
+                    alert.setContentText("Username or Password is incorrect.");
+                    alert.show();
+                }
+                break;
         }
 
     }
