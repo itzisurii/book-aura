@@ -20,7 +20,7 @@
       <JFXComboBox fx:id="cmbUserType" layoutX="627.0" layoutY="216.0" prefHeight="27.0" prefWidth="171.0" promptText="Customer/Staff" />
       <TextField fx:id="txtUsername" layoutX="584.0" layoutY="302.0" prefHeight="27.0" prefWidth="255.0" promptText="Username" />
       <PasswordField fx:id="txtPassword" layoutX="584.0" layoutY="373.0" prefHeight="27.0" prefWidth="255.0" promptText="Password" />
-      <JFXButton layoutX="659.0" layoutY="460.0" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #432818; -fx-background-radius: 25;" text="Login" textFill="WHITE">
+      <JFXButton layoutX="659.0" layoutY="460.0" onAction="#loginOnAction" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #432818; -fx-background-radius: 25;" text="Login" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
