@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="605.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.LoginFormController">
+<AnchorPane prefHeight="605.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.LoginFormController">
    <children>
       <ImageView fitHeight="605.0" fitWidth="477.0">
          <image>
@@ -31,5 +31,10 @@
          </font>
       </Label>
       <Label layoutX="584.0" layoutY="170.0" prefHeight="18.0" prefWidth="245.0" text="Welcome back! Select user type to login" />
+      <Label layoutX="622.0" layoutY="415.0" onMouseClicked="#onRegisterClick" style="-fx-underline: 10;" text="Don’t have an account? Register here" underline="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

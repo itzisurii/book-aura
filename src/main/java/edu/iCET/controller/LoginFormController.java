@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 
@@ -62,6 +63,7 @@ public class LoginFormController {
                     alert.show();
                 }
                 break;
+
             case "Staff":
                 if(username.equals("staff") && password.equals("1234")){
                     try {
@@ -83,4 +85,10 @@ public class LoginFormController {
         }
 
     }
+
+    @FXML
+    void onRegisterClick(MouseEvent event) {
+
+    }
+
 }
