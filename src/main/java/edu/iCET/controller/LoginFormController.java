@@ -10,8 +10,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
+import javafx.scene.input.MouseEvent;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 
@@ -25,6 +25,7 @@ public class LoginFormController {
 
     @FXML
     private TextField txtUsername;
+    
 
     @FXML
     public void initialize() {
@@ -86,9 +87,15 @@ public class LoginFormController {
 
     }
 
+
     @FXML
     void onRegisterClick(MouseEvent event) {
-
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/register_form.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
     }
 
 }
