@@ -6,17 +6,47 @@ import javafx.fxml.FXML;
 public class StaffDashboardController {
 
     @FXML
-    void browseBooksOnAction(ActionEvent event) {
+    void customersOnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void homeOnAction(ActionEvent event) {
+    void dashboardOnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void myRentalOnAction(ActionEvent event) {
+    void employeesOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void logoutOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ordersOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void placeOrderOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void productsOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void returnsOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void suppliersOnAction(ActionEvent event) {
 
     }
 
