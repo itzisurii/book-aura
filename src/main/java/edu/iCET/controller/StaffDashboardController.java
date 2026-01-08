@@ -2,8 +2,19 @@ package edu.iCET.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 
 public class StaffDashboardController {
+
+    @FXML
+    private AnchorPane contentPane;
+
+    @FXML
+    public void initialize() {
+        loadView("view/default_view.fxml");
+    }
+
 
     @FXML
     void customersOnAction(ActionEvent event) {
@@ -12,7 +23,7 @@ public class StaffDashboardController {
 
     @FXML
     void dashboardOnAction(ActionEvent event) {
-
+        loadView("dashboard_view.fxml");
     }
 
     @FXML
