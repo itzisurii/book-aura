@@ -61,4 +61,17 @@ public class StaffDashboardController {
 
     }
 
+    private void loadView(String fxml) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/" + fxml));
+            AnchorPane pane = loader.load();
+            contentPane.getChildren().setAll(pane);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
 }
