@@ -66,7 +66,7 @@ public class LoginFormController {
                 break;
 
             case "Staff":
-                if(username.equals("staff") && password.equals("1234")){
+                if(username.equals("admin") && password.equals("1234")){
                     try {
                         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/staff_dashboard.fxml"))));
                     } catch (IOException e) {
