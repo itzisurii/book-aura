@@ -2,9 +2,14 @@ package edu.iCET.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 
-public class StaffDashboardController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class StaffDashboardController implements Initializable {
 
     @FXML
     private AnchorPane contentPane;
@@ -39,4 +44,18 @@ public class StaffDashboardController {
 
     }
 
+    private void loadView(String fxml) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/" + fxml));
+            AnchorPane pane = loader.load();
+            contentPane.getChildren().setAll(pane);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
