@@ -62,7 +62,7 @@ public class AdminDashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        loadView("view/dashboard_view.fxml");
     }
 }
 
