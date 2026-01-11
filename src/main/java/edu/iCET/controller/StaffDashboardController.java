@@ -2,7 +2,6 @@ package edu.iCET.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
 public class StaffDashboardController {
@@ -11,10 +10,9 @@ public class StaffDashboardController {
     private AnchorPane contentPane;
 
     @FXML
-    public void initialize() {
-        loadView("view/default_view.fxml");
-    }
+    void booksOnAction(ActionEvent event) {
 
+    }
 
     @FXML
     void customersOnAction(ActionEvent event) {
@@ -23,11 +21,6 @@ public class StaffDashboardController {
 
     @FXML
     void dashboardOnAction(ActionEvent event) {
-        loadView("dashboard_view.fxml");
-    }
-
-    @FXML
-    void employeesOnAction(ActionEvent event) {
 
     }
 
@@ -37,17 +30,7 @@ public class StaffDashboardController {
     }
 
     @FXML
-    void ordersOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void placeOrderOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void productsOnAction(ActionEvent event) {
+    void rentalsOnAction(ActionEvent event) {
 
     }
 
@@ -55,23 +38,5 @@ public class StaffDashboardController {
     void returnsOnAction(ActionEvent event) {
 
     }
-
-    @FXML
-    void suppliersOnAction(ActionEvent event) {
-
-    }
-
-    private void loadView(String fxml) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/" + fxml));
-            AnchorPane pane = loader.load();
-            contentPane.getChildren().setAll(pane);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
 
 }
