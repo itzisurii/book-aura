@@ -10,7 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AdminDashboardController {
+public class AdminDashboardController implements Initializable {
 
     @FXML
     private AnchorPane contentPane;
@@ -51,6 +51,9 @@ public class AdminDashboardController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
 }
 
