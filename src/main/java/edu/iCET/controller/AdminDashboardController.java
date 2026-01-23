@@ -23,7 +23,7 @@ public class AdminDashboardController implements Initializable {
 
     @FXML
     void customersOnAction(ActionEvent event) {
-
+        loadUI("/view/customers_admin_form.fxml");
     }
 
     @FXML
@@ -44,12 +44,12 @@ public class AdminDashboardController implements Initializable {
 
     @FXML
     void reportsOnAction(ActionEvent event) {
-
+        loadUI("/view/report_admin_form.fxml");
     }
 
     @FXML
     void returnsOnAction(ActionEvent event) {
-
+        loadUI("/view/return_admin_form.fxml");
     }
 
     //-------------------Load UI-------------------//
