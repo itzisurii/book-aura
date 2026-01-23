@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,7 +28,7 @@ public class AdminDashboardController implements Initializable {
 
     @FXML
     void dashboardOnAction(ActionEvent event) {
-
+        loadUI("/view/dashboard_admin_form.fxml");
     }
 
     @FXML
@@ -38,6 +39,7 @@ public class AdminDashboardController implements Initializable {
     @FXML
     void rentalsOnAction(ActionEvent event) {
 
+        loadUI("/view/rental_admin_form.fxml");
     }
 
     @FXML
@@ -50,19 +52,20 @@ public class AdminDashboardController implements Initializable {
 
     }
 
-    private void loadView(String fxml) {
+    //-------------------Load UI-------------------//
+    private void loadUI(String path) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/" + fxml));
-            AnchorPane pane = loader.load();
-            contentPane.getChildren().setAll(pane);
-        } catch (Exception e) {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource(path));
+            contentPane.getChildren().clear();
+            contentPane.getChildren().add(pane);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadView("view/dashboard_view.fxml");
+        loadUI("/view/dashboard_admin_form.fxml");
     }
 }
 
