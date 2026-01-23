@@ -18,7 +18,7 @@ public class AdminDashboardController implements Initializable {
 
     @FXML
     void booksOnAction(ActionEvent event) {
-
+        loadUI("/view/book_admin_form.fxml");
     }
 
     @FXML
