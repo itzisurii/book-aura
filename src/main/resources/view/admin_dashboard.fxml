@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="674.0" prefWidth="1037.0" style="-fx-background-color: #ced4da;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.AdminDashboardController">
+   <children>
+      <AnchorPane prefHeight="674.0" prefWidth="200.0" style="-fx-background-color: #001233;">
+         <children>
+            <ImageView fitHeight="71.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../img/Gemini_Generated_Image_ellvidellvidellv.png" />
+               </image>
+            </ImageView>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="82.0" onAction="#dashboardOnAction" prefHeight="48.0" prefWidth="185.0" style="-fx-background-color: #001233; -fx-border-width: 3; -fx-cursor: hand;" text="☰ Dashboard" textAlignment="CENTER" textFill="#a8dadc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="142.0" onAction="#rentalsOnAction" prefHeight="48.0" prefWidth="185.0" style="-fx-background-color: #001233; -fx-border-width: 3; -fx-cursor: hand;" text="Rentals" textAlignment="CENTER" textFill="#a8dadc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="201.0" onAction="#booksOnAction" prefHeight="48.0" prefWidth="185.0" style="-fx-background-color: #001233; -fx-border-width: 3; -fx-cursor: hand;" text="Books" textAlignment="CENTER" textFill="#a8dadc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="261.0" onAction="#customersOnAction" prefHeight="48.0" prefWidth="185.0" style="-fx-background-color: #001233; -fx-border-width: 3; -fx-cursor: hand;" text="Customers" textAlignment="CENTER" textFill="#a8dadc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="318.0" onAction="#returnsOnAction" prefHeight="48.0" prefWidth="185.0" style="-fx-background-color: #001233; -fx-border-width: 3; -fx-cursor: hand;" text="Returns" textAlignment="CENTER" textFill="#a8dadc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="380.0" onAction="#reportsOnAction" prefHeight="48.0" prefWidth="185.0" style="-fx-background-color: #001233; -fx-border-width: 3; -fx-cursor: hand;" text="Reports" textAlignment="CENTER" textFill="#a8dadc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <Separator layoutX="-1.0" layoutY="607.0" prefWidth="200.0" />
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="617.0" onAction="#logoutOnAction" prefHeight="48.0" prefWidth="190.0" style="-fx-background-color: #001233; -fx-border-width: 3; -fx-cursor: hand;" text="➜] LOGOUT" textAlignment="CENTER" textFill="#d75d66" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="15.0" layoutY="540.0">
+               <image>
+                  <Image url="@../img/17003310.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="79.0" layoutY="549.0" text="ADMINISTRATOR" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="108.0" layoutY="568.0" text="Admin" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="218.0" layoutY="17.0" prefHeight="36.0" prefWidth="801.0" style="-fx-border-radius: 60; -fx-background-radius: 40; -fx-background-color: white;" text="     Welcome to BOOK AURA, Admin" textFill="#174d6f">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="contentPane" layoutX="200.0" layoutY="62.0" prefHeight="611.0" prefWidth="839.0" />
+   </children>
+</AnchorPane>
