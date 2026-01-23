@@ -48,8 +48,8 @@
                         <Font name="High Tower Text Italic" size="18.0" />
                      </font>
                   </Label>
-                  <JFXComboBox layoutX="28.0" layoutY="154.0" prefHeight="25.0" prefWidth="186.0" promptText="   Book ID" />
-                  <JFXComboBox layoutX="28.0" layoutY="238.0" prefHeight="25.0" prefWidth="186.0" promptText="   Customer ID" />
+                  <JFXComboBox fx:id="cmbBookId" layoutX="28.0" layoutY="154.0" prefHeight="25.0" prefWidth="186.0" promptText="   Book ID" />
+                  <JFXComboBox fx:id="cmbCustomerID" layoutX="28.0" layoutY="238.0" prefHeight="25.0" prefWidth="186.0" promptText="   Customer ID" />
                   <JFXButton layoutX="36.0" layoutY="340.0" onAction="#rentOnAction" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: #001233;" text="Rent" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="12.0" />
