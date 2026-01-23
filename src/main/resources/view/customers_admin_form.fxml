@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.CustomerAdminController">
+   <children>
+      <AnchorPane fx:id="contentPane" prefHeight="611.0" prefWidth="839.0" />
+      <AnchorPane fx:id="contentPane1" layoutX="1.0" prefHeight="611.0" prefWidth="839.0">
+         <children>
+            <Label layoutX="19.0" layoutY="17.0" prefHeight="40.0" prefWidth="125.0" text="Customers">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="682.0" layoutY="37.0" text="Customer/Dashboard" textFill="#00000071">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="583.0" layoutY="91.0" prefHeight="500.0" prefWidth="242.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 25, 0, 1, 6);">
+               <effect>
+                  <Shadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.10136452317237854" green="0.3220435380935669" blue="0.34210526943206787" />
+                     </color>
+                  </Shadow>
+               </effect>
+               <children>
+                  <Label layoutX="25.0" layoutY="30.0" prefHeight="28.0" prefWidth="173.0" text="Customer Details">
+                     <font>
+                        <Font name="High Tower Text Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="67.0" prefHeight="28.0" prefWidth="48.0" text="Date :">
+                     <font>
+                        <Font name="High Tower Text Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="93.0" prefHeight="28.0" prefWidth="112.0" text="Customer ID :">
+                     <font>
+                        <Font name="High Tower Text Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="36.0" layoutY="371.0" onAction="#addCustomerOnAction" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: #001233;" text="Add Customer" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="lblDate" layoutX="77.0" layoutY="75.0" prefHeight="17.0" prefWidth="78.0" text="01-23-2026" textFill="RED">
+                     <font>
+                        <Font name="Calibri Light Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblID" layoutX="134.0" layoutY="101.0" prefHeight="17.0" prefWidth="48.0" text="C001" textFill="#0b054d">
+                     <font>
+                        <Font name="Calibri Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtName" layoutX="35.0" layoutY="201.0" prefHeight="25.0" prefWidth="173.0" promptText="   Customer" text="   Name" />
+                  <TextField fx:id="txtPhoneNumber" layoutX="36.0" layoutY="248.0" prefHeight="25.0" prefWidth="173.0" promptText="   Book ID" text="   Phone Number" />
+                  <TextField fx:id="txtEmail" layoutX="36.0" layoutY="295.0" prefHeight="25.0" prefWidth="173.0" promptText="   Fine" text="   Email" />
+                  <JFXComboBox fx:id="cmbTitle" layoutX="35.0" layoutY="150.0" prefHeight="25.0" prefWidth="173.0" promptText="   Title" />
+                  <JFXButton layoutX="36.0" layoutY="424.0" onAction="#updateOnAction" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: #283618;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="131.0" layoutY="424.0" onAction="#deleteOnAction" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: #780000;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="19.0" layoutY="91.0" prefHeight="500.0" prefWidth="552.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 22, 0, 0, 6);">
+               <effect>
+                  <Shadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.10136452317237854" green="0.3220435380935669" blue="0.34210526943206787" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
