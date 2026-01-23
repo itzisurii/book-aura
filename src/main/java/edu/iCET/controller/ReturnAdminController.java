@@ -22,7 +22,13 @@ public class ReturnAdminController {
     private TableColumn<?, ?> colCompleteDueDate;
 
     @FXML
+    private TableColumn<?, ?> colCompleteFine;
+
+    @FXML
     private TableColumn<?, ?> colCompleteIssueDate;
+
+    @FXML
+    private TableColumn<?, ?> colCompleteOverdueDate;
 
     @FXML
     private TableColumn<?, ?> colCompleteRentalID;
