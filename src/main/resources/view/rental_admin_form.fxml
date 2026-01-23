@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.RentalAdminController">
+   <children>
+      <AnchorPane fx:id="contentPane" layoutX="1.0" layoutY="-1.0" prefHeight="611.0" prefWidth="839.0">
+         <children>
+            <Label layoutX="19.0" layoutY="17.0" prefHeight="40.0" prefWidth="125.0" text="Rental">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="700.0" layoutY="37.0" text="Rental/Dashboard" textFill="#00000071">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="578.0" layoutY="91.0" prefHeight="500.0" prefWidth="242.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 22, 0, 0, 6);">
+               <effect>
+                  <Shadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.10136452317237854" green="0.3220435380935669" blue="0.34210526943206787" />
+                     </color>
+                  </Shadow>
+               </effect>
+               <children>
+                  <Label layoutX="20.0" layoutY="14.0" prefHeight="25.0" prefWidth="108.0" text="Rentals" textFill="#0000009b">
+                     <font>
+                        <Font name="Ebrima" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="19.0" layoutY="91.0" prefHeight="500.0" prefWidth="540.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 22, 0, 0, 6);">
+               <effect>
+                  <Shadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.10136452317237854" green="0.3220435380935669" blue="0.34210526943206787" />
+                     </color>
+                  </Shadow>
+               </effect>
+               <children>
+                  <Label layoutX="20.0" layoutY="14.0" prefHeight="25.0" prefWidth="141.0" text="Best Seller" textFill="#0000009b">
+                     <font>
+                        <Font name="Ebrima" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
