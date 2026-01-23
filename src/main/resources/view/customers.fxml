@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.RentalAdminController">
+   <children>
+      <AnchorPane fx:id="contentPane" prefHeight="611.0" prefWidth="839.0">
+         <children>
+            <Label layoutX="19.0" layoutY="17.0" prefHeight="40.0" prefWidth="150.0" text="Customers">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="700.0" layoutY="37.0" text="Home/Customers" textFill="#00000071">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
