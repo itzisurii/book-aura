@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.RentalAdminController">
    <children>
       <AnchorPane fx:id="contentPane" layoutX="1.0" layoutY="-1.0" prefHeight="611.0" prefWidth="839.0">
          <children>
-            <Label layoutX="19.0" layoutY="17.0" prefHeight="40.0" prefWidth="125.0" text="Rental">
+            <Label layoutX="19.0" layoutY="17.0" prefHeight="40.0" prefWidth="125.0" text="Rentals">
                <font>
                   <Font name="Berlin Sans FB" size="27.0" />
                </font>
@@ -21,7 +24,7 @@
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="578.0" layoutY="91.0" prefHeight="500.0" prefWidth="242.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 22, 0, 0, 6);">
+            <AnchorPane layoutX="578.0" layoutY="91.0" prefHeight="500.0" prefWidth="242.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 25, 0, 1, 6);">
                <effect>
                   <Shadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.0">
                      <color>
@@ -30,9 +33,46 @@
                   </Shadow>
                </effect>
                <children>
-                  <Label layoutX="20.0" layoutY="14.0" prefHeight="25.0" prefWidth="108.0" text="Rentals" textFill="#0000009b">
+                  <Label layoutX="25.0" layoutY="30.0" prefHeight="28.0" prefWidth="145.0" text="Rental Details">
                      <font>
-                        <Font name="Ebrima" size="16.0" />
+                        <Font name="High Tower Text Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="64.0" prefHeight="28.0" prefWidth="48.0" text="Date :">
+                     <font>
+                        <Font name="High Tower Text Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="87.0" prefHeight="28.0" prefWidth="86.0" text="Rental ID :">
+                     <font>
+                        <Font name="High Tower Text Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox layoutX="28.0" layoutY="154.0" prefHeight="25.0" prefWidth="186.0" promptText="   Book ID" />
+                  <JFXComboBox layoutX="28.0" layoutY="238.0" prefHeight="25.0" prefWidth="186.0" promptText="   Customer ID" />
+                  <JFXButton layoutX="36.0" layoutY="340.0" onAction="#rentOnAction" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: #001233;" text="Rent" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="36.0" layoutY="391.0" onAction="#updateOnAction" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: #283618;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="131.0" layoutY="391.0" onAction="#deleteOnAction" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: #780000;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="77.0" layoutY="71.0" prefHeight="17.0" prefWidth="78.0" text="01-23-2026" textFill="RED">
+                     <font>
+                        <Font name="Calibri Light Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="113.0" layoutY="94.0" prefHeight="17.0" prefWidth="78.0" text="R001" textFill="#0b054d">
+                     <font>
+                        <Font name="Calibri Light" size="14.0" />
                      </font>
                   </Label>
                </children>
@@ -46,11 +86,15 @@
                   </Shadow>
                </effect>
                <children>
-                  <Label layoutX="20.0" layoutY="14.0" prefHeight="25.0" prefWidth="141.0" text="Best Seller" textFill="#0000009b">
-                     <font>
-                        <Font name="Ebrima" size="16.0" />
-                     </font>
-                  </Label>
+                  <TableView layoutX="23.0" layoutY="22.0" prefHeight="457.0" prefWidth="495.0">
+                    <columns>
+                      <TableColumn fx:id="colRentalID" prefWidth="81.0" text="Rental ID" />
+                      <TableColumn fx:id="colBookID" prefWidth="88.0" text="BookID" />
+                        <TableColumn fx:id="colCustomerID" prefWidth="108.0" text="Customer ID" />
+                        <TableColumn fx:id="colIssueDate" prefWidth="104.0" text="Issue Date" />
+                        <TableColumn fx:id="colDueDate" prefWidth="113.0" text="Due Date" />
+                    </columns>
+                  </TableView>
                </children>
             </AnchorPane>
          </children>
