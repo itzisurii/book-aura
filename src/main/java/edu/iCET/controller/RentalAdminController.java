@@ -1,11 +1,18 @@
 package edu.iCET.controller;
 
+import com.jfoenix.controls.JFXComboBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.layout.AnchorPane;
 
 public class RentalAdminController {
+
+    @FXML
+    private JFXComboBox<?> cmbBookId;
+
+    @FXML
+    private JFXComboBox<?> cmbCustomerID;
 
     @FXML
     private TableColumn<?, ?> colBookID;
