@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
-public class DashboardController {
+public class DashboardAdminController {
 
     @FXML
     private AnchorPane contentPane;

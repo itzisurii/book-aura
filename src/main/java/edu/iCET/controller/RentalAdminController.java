@@ -3,6 +3,7 @@ package edu.iCET.controller;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.layout.AnchorPane;
 
@@ -31,6 +32,9 @@ public class RentalAdminController {
 
     @FXML
     private AnchorPane contentPane;
+
+    @FXML
+    private Label lblRentalID;
 
     @FXML
     void deleteOnAction(ActionEvent event) {
