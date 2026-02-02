@@ -59,6 +59,21 @@ public class CustomerAdminController implements Initializable {
     @FXML
     void addCustomerOnAction(ActionEvent event) {
 
+        CustomerAdminDTO customer = new CustomerAdminDTO(
+                customerAdminService.generateCustomerId(),
+                cmbTitle.getValue(),
+                txtName.getText(),
+                txtPhoneNumber.getText(),
+                txtEmail.getText()
+        );
+
+        customerAdminService.addCustomer(customer);
+        loadCustomers();
+
+        lblID.setText(customerAdminService.generateCustomerId());
+        txtName.clear();
+        txtPhoneNumber.clear();
+        txtEmail.clear();
     }
 
 
