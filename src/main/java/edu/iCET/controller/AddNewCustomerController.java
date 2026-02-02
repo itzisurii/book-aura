@@ -11,9 +11,6 @@ public class AddNewCustomerController {
     private ImageView imgTitle;
 
     @FXML
-    private TextField txtAddress;
-
-    @FXML
     private TextField txtEmail;
 
     @FXML
@@ -27,7 +24,6 @@ public class AddNewCustomerController {
 
     @FXML
     private TextField txtTitle;
-
 
     @FXML
     void btnAddCustomer(ActionEvent event) {
