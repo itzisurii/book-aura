@@ -2,9 +2,8 @@ package edu.iCET.controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import edu.iCET.model.dto.CustomerAdminDTO;
-import edu.iCET.service.CustomerAdminServiceImpl;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import edu.iCET.service.CustomerAdminService;
+import edu.iCET.service.impl.CustomerAdminServiceImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +18,9 @@ import java.util.ResourceBundle;
 
 public class CustomerAdminController implements Initializable {
 
-    CustomerAdminServiceImpl customerAdminService = new CustomerAdminServiceImpl();
+    // Reference is of type CustomerAdminService (interface),
+    // object is created from CustomerAdminServiceImpl (implementation)
+    CustomerAdminService customerAdminService = new CustomerAdminServiceImpl();
 
     @FXML
     private JFXComboBox<String> cmbTitle;
@@ -60,17 +61,19 @@ public class CustomerAdminController implements Initializable {
     void addCustomerOnAction(ActionEvent event) {
 
         CustomerAdminDTO customer = new CustomerAdminDTO(
-                customerAdminService.generateCustomerId(),
+                lblID.getText(),
                 cmbTitle.getValue(),
                 txtName.getText(),
                 txtPhoneNumber.getText(),
                 txtEmail.getText()
         );
 
-        customerAdminService.addCustomer(customer);
-        loadCustomers();
+        boolean saved = customerAdminService.addCustomer(customer);
 
-        lblID.setText(customerAdminService.generateCustomerId());
+        if (saved){
+            lblID.setText(customerAdminService.generateCustomerId());
+        }
+
         txtName.clear();
         txtPhoneNumber.clear();
         txtEmail.clear();
@@ -79,6 +82,7 @@ public class CustomerAdminController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        lblID.setText(customerAdminService.generateCustomerId());
         cmbTitle.getItems().addAll("Mr","Mrs","Miss");
         loadCustomers();
         lblID.setText(customerAdminService.generateCustomerId());
@@ -88,22 +92,9 @@ public class CustomerAdminController implements Initializable {
         contentPane.getChildren().clear();
         double y = 10;
 
-        for (CustomerAdminDTO customer : customerAdminService.getAllCustomers()) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/customer_cards_admin.fxml"));
-                AnchorPane card = loader.load();
+        customerAdminService.getAllCustomers();
 
-                CustomerCardsAdmin controller = loader.getController();
-                controller.setData(customer);
 
-                card.setLayoutY(y);
-                y += 110;
-
-                contentPane.getChildren().add(card);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
 }
