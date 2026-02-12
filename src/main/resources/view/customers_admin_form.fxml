@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
@@ -63,9 +64,9 @@
                         <Font name="Calibri Light" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtName" layoutX="35.0" layoutY="201.0" prefHeight="25.0" prefWidth="173.0" promptText="   Customer" text="   Name" />
-                  <TextField fx:id="txtPhoneNumber" layoutX="36.0" layoutY="248.0" prefHeight="25.0" prefWidth="173.0" promptText="   Book ID" text="   Phone Number" />
-                  <TextField fx:id="txtEmail" layoutX="36.0" layoutY="295.0" prefHeight="25.0" prefWidth="173.0" promptText="   Fine" text="   Email" />
+                  <TextField fx:id="txtName" layoutX="35.0" layoutY="201.0" prefHeight="25.0" prefWidth="173.0" promptText="   Name" />
+                  <TextField fx:id="txtPhoneNumber" layoutX="36.0" layoutY="248.0" prefHeight="25.0" prefWidth="173.0" promptText="   Phone Number" />
+                  <TextField fx:id="txtEmail" layoutX="36.0" layoutY="295.0" prefHeight="25.0" prefWidth="173.0" promptText="    Email" />
                   <JFXComboBox fx:id="cmbTitle" layoutX="35.0" layoutY="150.0" prefHeight="25.0" prefWidth="173.0" promptText="   Title" />
                   <JFXButton layoutX="36.0" layoutY="424.0" onAction="#updateOnAction" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: #283618;" text="Update" textFill="WHITE">
                      <font>
@@ -79,15 +80,7 @@
                   </JFXButton>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="19.0" layoutY="91.0" prefHeight="500.0" prefWidth="552.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 22, 0, 0, 6);">
-               <effect>
-                  <Shadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.10136452317237854" green="0.3220435380935669" blue="0.34210526943206787" />
-                     </color>
-                  </Shadow>
-               </effect>
-            </AnchorPane>
+            <VBox fx:id="vBoxCustomerAdmin" layoutX="14.0" layoutY="91.0" prefHeight="500.0" prefWidth="552.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 22, 0, 0, 6);" />
          </children>
       </AnchorPane>
    </children>
