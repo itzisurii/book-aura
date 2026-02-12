@@ -9,10 +9,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -31,7 +34,7 @@ public class CustomerAdminController implements Initializable {
     private JFXComboBox<String> cmbTitle;
 
     @FXML
-    private AnchorPane contentPane;
+    private AnchorPane cardsContainer;
 
     @FXML
     private AnchorPane contentPane1;
@@ -53,7 +56,7 @@ public class CustomerAdminController implements Initializable {
 
 
     @FXML
-    private VBox vBoxCustomerAdmin;
+    private GridPane gridCustomerAdmin;
 
     @FXML
     void deleteOnAction(ActionEvent event) {
@@ -82,6 +85,7 @@ public class CustomerAdminController implements Initializable {
 
         if (saved){
             lblID.setText(customerAdminService.generateCustomerId());
+            loadCustomers();
         }
 
         txtName.clear();
@@ -96,27 +100,34 @@ public class CustomerAdminController implements Initializable {
         cmbTitle.getItems().addAll("Mr","Mrs","Miss");
         loadCustomers();
         lblID.setText(customerAdminService.generateCustomerId());
+
+        gridCustomerAdmin.setAlignment(Pos.CENTER);
     }
 
     private void loadCustomers(){
-        contentPane.getChildren().clear();
-        double y = 10;
 
-        Stage stage = new Stage();
+        gridCustomerAdmin.getChildren().clear();
 
         List<CustomerAdminDTO> customerAdminDTOS = customerAdminService.getAllCustomers();
 
+        int column = 0;
+        int row = 0;
+
         for (CustomerAdminDTO c : customerAdminDTOS){
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/customer_card.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/customer_cards_admin.fxml"));
                 AnchorPane card = loader.load();
 
                 CustomerCardsAdmin cardController = loader.getController();
                 cardController.setData(c, this::populateForm);
 
-                card.setLayoutY(y);
-                contentPane.getChildren().add(card);
-                y += card.getPrefHeight() + 10;
+                gridCustomerAdmin.add(card, column, row);
+
+                column++;
+                if (column == 4){
+                    column = 0;
+                    row++;
+                }
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
