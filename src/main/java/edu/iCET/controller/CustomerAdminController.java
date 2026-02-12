@@ -2,18 +2,23 @@ package edu.iCET.controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import edu.iCET.model.dto.CustomerAdminDTO;
+import edu.iCET.model.entity.CustomerAdmin;
 import edu.iCET.service.CustomerAdminService;
 import edu.iCET.service.impl.CustomerAdminServiceImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class CustomerAdminController implements Initializable {
@@ -48,12 +53,17 @@ public class CustomerAdminController implements Initializable {
 
 
     @FXML
+    private VBox vBoxCustomerAdmin;
+
+    @FXML
     void deleteOnAction(ActionEvent event) {
 
     }
 
     @FXML
     void updateOnAction(ActionEvent event) {
+
+
 
     }
 
@@ -92,9 +102,35 @@ public class CustomerAdminController implements Initializable {
         contentPane.getChildren().clear();
         double y = 10;
 
-        customerAdminService.getAllCustomers();
+        Stage stage = new Stage();
 
+        List<CustomerAdminDTO> customerAdminDTOS = customerAdminService.getAllCustomers();
 
+        for (CustomerAdminDTO c : customerAdminDTOS){
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/customer_card.fxml"));
+                AnchorPane card = loader.load();
+
+                CustomerCardsAdmin cardController = loader.getController();
+                cardController.setData(c, this::populateForm);
+
+                card.setLayoutY(y);
+                contentPane.getChildren().add(card);
+                y += card.getPrefHeight() + 10;
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+    }
+
+    private void populateForm(CustomerAdminDTO customer) {
+        lblID.setText(customer.getCustomerId());
+        cmbTitle.setValue(customer.getTitle());
+        txtName.setText(customer.getName());
+        txtPhoneNumber.setText(customer.getPhone());
+        txtEmail.setText(customer.getEmail());
     }
 
 }
