@@ -3,6 +3,7 @@ package edu.iCET.repository;
 import edu.iCET.model.entity.CustomerAdmin;
 
 import java.util.Arrays;
+import java.util.List;
 
 public interface CustomerAdminRepository {
 
@@ -10,4 +11,5 @@ public interface CustomerAdminRepository {
 
     boolean save(CustomerAdmin customerAdmin);
 
+    List<CustomerAdmin> getAll();
 }
