@@ -8,7 +8,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class CustomerAdminRepositoryImpl implements CustomerAdminRepository {
 
@@ -54,5 +56,32 @@ public class CustomerAdminRepositoryImpl implements CustomerAdminRepository {
         }
 
 
+    }
+
+    @Override
+    public List<CustomerAdmin> getAll() {
+        String sql = "SELECT * FROM customeradmin";
+        List<CustomerAdmin> list = new ArrayList<>();
+
+        try {
+            Connection conn = DBConnection.getInstance().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                list.add(new CustomerAdmin(
+                        rs.getString("customerId"),
+                        rs.getString("title"),
+                        rs.getString("name"),
+                        rs.getString("phone"),
+                        rs.getString("email")
+                ));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
     }
 }
