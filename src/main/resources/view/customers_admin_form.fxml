@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,9 +11,10 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.CustomerAdminController">
    <children>
-      <AnchorPane fx:id="contentPane" prefHeight="611.0" prefWidth="839.0" />
       <AnchorPane fx:id="contentPane1" layoutX="1.0" prefHeight="611.0" prefWidth="839.0">
          <children>
             <Label layoutX="19.0" layoutY="17.0" prefHeight="40.0" prefWidth="125.0" text="Customers">
@@ -80,7 +82,22 @@
                   </JFXButton>
                </children>
             </AnchorPane>
-            <VBox fx:id="vBoxCustomerAdmin" layoutX="14.0" layoutY="91.0" prefHeight="500.0" prefWidth="552.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 22, 0, 0, 6);" />
+            <AnchorPane fx:id="cardsContainer" layoutX="16.0" layoutY="91.0" prefHeight="500.0" prefWidth="551.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 22, 0, 0, 6); -fx-background-radius: 20;">
+               <children>
+                  <ScrollPane prefHeight="500.0"
+                              prefWidth="551.0"
+                              fitToWidth="true"
+                              hbarPolicy="NEVER">
+                     <content>
+                         <GridPane fx:id="gridCustomerAdmin" prefWidth="551.0" hgap="10" vgap="10">
+                             <padding>
+                                 <Insets top="10" right="10" bottom="10" left="10"/>
+                             </padding>
+                         </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
