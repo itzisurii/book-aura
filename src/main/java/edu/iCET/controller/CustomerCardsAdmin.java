@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
+import java.util.function.Consumer;
+
 public class CustomerCardsAdmin {
 
     private CustomerAdminDTO customerAdminDTO;
@@ -17,15 +19,28 @@ public class CustomerCardsAdmin {
     @FXML
     private Label lblPhoneNumber;
 
+    private CustomerAdminDTO customer;
 
-    public void setData(CustomerAdminDTO customer) {
-        this.customerAdminDTO = customer;
+    private Consumer<CustomerAdminDTO> onClick;
 
-        lblName.setText(customer.getTitle() + " " + customer.getName());
-        lblPhoneNumber.setText(customer.getPhone());
-    }
+
+
 
     public CustomerAdminDTO customerAdminDTO(){
         return customerAdminDTO;
+    }
+
+    public void setData(CustomerAdminDTO customer, Consumer<CustomerAdminDTO> onClick){
+        this.customer = customer;
+        this.onClick = onClick;
+
+        lblName.setText(customer.getName());
+        lblPhoneNumber.setText(customer.getPhone());
+
+        lblName.getParent().setOnMouseClicked( e -> {
+            if (this.onClick != null){
+                this.onClick.accept(customer);
+            }
+        });
     }
 }
