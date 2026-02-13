@@ -6,6 +6,9 @@ import edu.iCET.repository.CustomerAdminRepository;
 import edu.iCET.repository.impl.CustomerAdminRepositoryImpl;
 import edu.iCET.service.CustomerAdminService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CustomerAdminServiceImpl implements CustomerAdminService {
 
     CustomerAdminRepository customerAdminRepository = new CustomerAdminRepositoryImpl();
@@ -39,7 +42,21 @@ public class CustomerAdminServiceImpl implements CustomerAdminService {
     }
 
     @Override
-    public void getAllCustomers() {
+    public List<CustomerAdminDTO> getAllCustomers() {
+        List<CustomerAdmin> allEntities = customerAdminRepository.getAll();
+        List<CustomerAdminDTO> dtos = new ArrayList<>();
 
+        for (CustomerAdmin c : allEntities){
+            dtos.add(new CustomerAdminDTO(
+                    c.getCustomerId(),
+                    c.getTitle(),
+                    c.getName(),
+                    c.getPhone(),
+                    c.getEmail()
+            ));
+        }
+
+        return dtos;
     }
+
 }
