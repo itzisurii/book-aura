@@ -2,22 +2,17 @@ package edu.iCET.controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import edu.iCET.model.dto.CustomerAdminDTO;
-import edu.iCET.model.entity.CustomerAdmin;
 import edu.iCET.service.CustomerAdminService;
 import edu.iCET.service.impl.CustomerAdminServiceImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -60,7 +55,10 @@ public class CustomerAdminController implements Initializable {
 
     @FXML
     void deleteOnAction(ActionEvent event) {
+        String id = lblID.getText();
+        customerAdminService.deleteCustomerDetails(id);
 
+        loadCustomers();
     }
 
     @FXML
