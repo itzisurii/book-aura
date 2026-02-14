@@ -14,4 +14,6 @@ public interface CustomerAdminRepository {
     List<CustomerAdmin> getAll();
 
     void deleteCustomerDetails(String id);
+
+    void updateCustomerDetails(String id, String title, String name, String phoneNumber, String email);
 }
