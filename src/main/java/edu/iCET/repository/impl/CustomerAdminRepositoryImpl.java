@@ -84,4 +84,21 @@ public class CustomerAdminRepositoryImpl implements CustomerAdminRepository {
 
         return list;
     }
+
+    @Override
+    public void deleteCustomerDetails(String id) {
+        String sql = "DELETE FROM customeradmin WHERE customerId = ?";
+
+        try {
+            Connection conn = DBConnection.getInstance().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setObject(1,id);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
