@@ -63,4 +63,9 @@ public class CustomerAdminServiceImpl implements CustomerAdminService {
     public void deleteCustomerDetails(String id) {
         customerAdminRepository.deleteCustomerDetails(id);
     }
+
+    @Override
+    public void updateCustomerDetails(String id, String title,String name, String phoneNumber, String email) {
+        customerAdminRepository.updateCustomerDetails(id, title,name,phoneNumber,email);
+    }
 }
