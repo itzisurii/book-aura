@@ -59,4 +59,8 @@ public class CustomerAdminServiceImpl implements CustomerAdminService {
         return dtos;
     }
 
+    @Override
+    public void deleteCustomerDetails(String id) {
+        customerAdminRepository.deleteCustomerDetails(id);
+    }
 }
