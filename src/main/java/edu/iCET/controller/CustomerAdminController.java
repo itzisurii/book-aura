@@ -63,9 +63,14 @@ public class CustomerAdminController implements Initializable {
 
     @FXML
     void updateOnAction(ActionEvent event) {
+        String id = lblID.getText();
+        String title = cmbTitle.getValue();
+        String name = txtName.getText();
+        String phoneNumber = txtPhoneNumber.getText();
+        String email = txtEmail.getText();
 
-
-
+        customerAdminService.updateCustomerDetails(id,title,name,phoneNumber,email);
+        loadCustomers();
     }
 
     @FXML
