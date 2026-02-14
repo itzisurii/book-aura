@@ -101,4 +101,26 @@ public class CustomerAdminRepositoryImpl implements CustomerAdminRepository {
         }
 
     }
+
+    @Override
+    public void updateCustomerDetails(String id, String title, String name, String phoneNumber, String email) {
+        String sql = "UPDATE customeradmin SET title = ?, name = ?, phone = ?, email = ? WHERE customerId = ?";
+
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+
+            ps.setObject(1,title);
+            ps.setObject(2,name);
+            ps.setObject(3,phoneNumber);
+            ps.setObject(4,email);
+            ps.setObject(5,id);
+
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
