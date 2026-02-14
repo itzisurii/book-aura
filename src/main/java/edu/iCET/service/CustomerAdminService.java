@@ -13,4 +13,6 @@ public interface CustomerAdminService {
     List<CustomerAdminDTO> getAllCustomers();
 
     void deleteCustomerDetails(String id);
+
+    void updateCustomerDetails(String id, String title,String name, String phoneNumber, String email);
 }
