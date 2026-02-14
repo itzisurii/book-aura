@@ -11,4 +11,6 @@ public interface CustomerAdminService {
     boolean addCustomer(CustomerAdminDTO customer);
 
     List<CustomerAdminDTO> getAllCustomers();
+
+    void deleteCustomerDetails(String id);
 }
