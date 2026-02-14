@@ -12,4 +12,6 @@ public interface CustomerAdminRepository {
     boolean save(CustomerAdmin customerAdmin);
 
     List<CustomerAdmin> getAll();
+
+    void deleteCustomerDetails(String id);
 }
