@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="655.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.LoginFormController">
+   <children>
+      <JFXComboBox fx:id="cmbUserType" layoutX="718.0" layoutY="255.0" prefHeight="27.0" prefWidth="171.0" promptText="Admin/Staff" style="-fx-cursor: hand;" />
+      <TextField fx:id="txtUsername" layoutX="696.0" layoutY="335.0" prefHeight="27.0" prefWidth="217.0" promptText="Username" />
+      <PasswordField fx:id="txtPassword" layoutX="696.0" layoutY="397.0" prefHeight="27.0" prefWidth="217.0" promptText="Password" />
+      <JFXButton layoutX="751.0" layoutY="493.0" onAction="#loginOnAction" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #001233; -fx-background-radius: 15; -fx-cursor: hand;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Calibri Light" size="15.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="695.0" layoutY="186.0" prefHeight="18.0" prefWidth="217.0" text="Welcome back! Select user type to login" textAlignment="CENTER" />
+      <Label layoutX="714.0" layoutY="433.0" onMouseClicked="#onRegisterClick" style="-fx-underline: 10; -fx-cursor: hand; -fx-underline: true;" text="Don’t have an account? Register here" underline="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="655.0" fitWidth="528.0" layoutX="-2.0">
+         <image>
+            <Image url="@../img/Gemini_Generated_Image_bjvb9qbjvb9qbjvb.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="76.0" layoutY="267.0" prefHeight="51.0" prefWidth="320.0" text="BOOK" textFill="#82a0d3">
+         <font>
+            <Font name="Impact" size="50.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="129.0" layoutY="335.0" prefHeight="51.0" prefWidth="320.0" text="AURA" textFill="#82a0d3">
+         <font>
+            <Font name="Impact" size="50.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="82.0" layoutY="267.0" prefHeight="51.0" prefWidth="320.0" text="BOOK" textFill="#0c2754">
+         <font>
+            <Font name="Bernard MT Condensed" size="50.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="129.0" layoutY="335.0" prefHeight="51.0" prefWidth="320.0" text="AURA" textFill="#0c2754">
+         <font>
+            <Font name="Bernard MT Condensed" size="50.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="645.0" layoutY="118.0" prefHeight="51.0" prefWidth="320.0" text="LOGIN" textFill="#0c2754">
+         <font>
+            <Font name="Bernard MT Condensed" size="50.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

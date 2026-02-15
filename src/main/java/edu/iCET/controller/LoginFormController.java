@@ -8,7 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
 
@@ -29,7 +28,8 @@ public class LoginFormController {
 
     @FXML
     public void initialize() {
-        cmbUserType.getItems().addAll("Customer", "Staff");
+
+        cmbUserType.getItems().addAll("Admin", "Staff");
     }
 
     Stage stage = new Stage();
@@ -46,10 +46,10 @@ public class LoginFormController {
         }
 
         switch(userType){
-            case "Customer":
-                if (username.equals("isu") && password.equals("1234")){
+            case "Admin":
+                if (username.equals("admin") && password.equals("1234")){
                     try {
-                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/customer_dashboard.fxml"))));
+                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin_dashboard.fxml"))));
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -68,7 +68,7 @@ public class LoginFormController {
             case "Staff":
                 if(username.equals("staff") && password.equals("1234")){
                     try {
-                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/staff_dashboard.fxml"))));
+                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/staff_dashboard.fxml"))));
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -91,7 +91,7 @@ public class LoginFormController {
     @FXML
     void onRegisterClick(MouseEvent event) {
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/register_form.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/register_form.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.iCET.controller.BooksAdminController">
+   <children>
+      <AnchorPane fx:id="contentPane" layoutX="1.0" layoutY="1.0" prefHeight="611.0" prefWidth="839.0">
+         <children>
+            <Label layoutX="19.0" layoutY="17.0" prefHeight="40.0" prefWidth="125.0" text="Books">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="700.0" layoutY="37.0" text="Books/Dashboard" textFill="#00000071">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="578.0" layoutY="91.0" prefHeight="500.0" prefWidth="242.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 25, 0, 1, 6);">
+               <effect>
+                  <Shadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.10136452317237854" green="0.3220435380935669" blue="0.34210526943206787" />
+                     </color>
+                  </Shadow>
+               </effect>
+               <children>
+                  <Label layoutX="25.0" layoutY="30.0" prefHeight="28.0" prefWidth="145.0" text="Books Details">
+                     <font>
+                        <Font name="High Tower Text Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="64.0" prefHeight="28.0" prefWidth="48.0" text="Date :">
+                     <font>
+                        <Font name="High Tower Text Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="88.0" prefHeight="28.0" prefWidth="78.0" text="Book ID :">
+                     <font>
+                        <Font name="High Tower Text Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="36.0" layoutY="340.0" onAction="#addBooksOnAction" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: #001233;" text="Add Book" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="36.0" layoutY="391.0" onAction="#updateOnAction" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: #283618;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="131.0" layoutY="391.0" onAction="#deleteOnAction" prefHeight="28.0" prefWidth="78.0" style="-fx-background-color: #780000;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="lblDate" layoutX="77.0" layoutY="72.0" prefHeight="17.0" prefWidth="78.0" text="01-23-2026" textFill="RED">
+                     <font>
+                        <Font name="Calibri Light Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblBookID" layoutX="102.0" layoutY="96.0" prefHeight="17.0" prefWidth="48.0" text="R001" textFill="#0b054d">
+                     <font>
+                        <Font name="Calibri Light" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtTitle" layoutX="35.0" layoutY="145.0" prefHeight="25.0" prefWidth="183.0" promptText="   Title" />
+                  <TextField fx:id="txtAuthor" layoutX="35.0" layoutY="187.0" prefHeight="25.0" prefWidth="183.0" promptText="   Author" />
+                  <TextField fx:id="txtCategory" layoutX="35.0" layoutY="229.0" prefHeight="25.0" prefWidth="183.0" promptText="   Category" />
+                  <Spinner fx:id="spnNumber" layoutX="36.0" layoutY="271.0" prefHeight="25.0" prefWidth="183.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="19.0" layoutY="91.0" prefHeight="500.0" prefWidth="540.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 22, 0, 0, 6);">
+               <effect>
+                  <Shadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.10136452317237854" green="0.3220435380935669" blue="0.34210526943206787" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
