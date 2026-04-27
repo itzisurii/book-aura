@@ -8,8 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class BookAdminDTO {
+    private String id;
     private String Title;
     private String Author;
     private String Category;
-    private Integer Qty;
+    private String Qty;
 }
