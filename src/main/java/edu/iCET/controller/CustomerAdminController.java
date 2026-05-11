@@ -59,6 +59,7 @@ public class CustomerAdminController implements Initializable {
         customerAdminService.deleteCustomerDetails(id);
 
         loadCustomers();
+        clear();
     }
 
     @FXML
@@ -71,6 +72,7 @@ public class CustomerAdminController implements Initializable {
 
         customerAdminService.updateCustomerDetails(id,title,name,phoneNumber,email);
         loadCustomers();
+        clear();
     }
 
     @FXML
@@ -94,6 +96,8 @@ public class CustomerAdminController implements Initializable {
         txtName.clear();
         txtPhoneNumber.clear();
         txtEmail.clear();
+
+        clear();
     }
 
 
@@ -145,6 +149,14 @@ public class CustomerAdminController implements Initializable {
         txtName.setText(customer.getName());
         txtPhoneNumber.setText(customer.getPhone());
         txtEmail.setText(customer.getEmail());
+    }
+
+    public void clear(){
+        cmbTitle.setValue(null);
+        txtName.clear();
+        txtEmail.clear();
+        txtPhoneNumber.clear();
+        txtEmail.clear();
     }
 
 }
